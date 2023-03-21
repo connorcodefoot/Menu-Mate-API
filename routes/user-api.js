@@ -20,7 +20,7 @@ router.get('/cart', (req, res) => {
 
   cartQueries.getCart()
     .then(items => {
-      console.log(items)
+      // console.log(items)
       res.json({ items });
     })
 
