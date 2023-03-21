@@ -5,7 +5,7 @@ const getMenus = () => {
     `
     SELECT menus.*, items.*
     FROM menus
-    JOIN items ON menus.id = items.menu_id
+    JOIN items ON menus.id = items.menu_id;
     `
     )
     .then(data => {
