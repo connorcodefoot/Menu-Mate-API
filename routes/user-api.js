@@ -4,8 +4,8 @@ const menuQueries = require('../db/queries/menus')
 
 router.get('/menus', (req, res) => {
   menuQueries.getMenus()
-    .then(menus => {
-      res.json({ menus });
+    .then(items => {
+      res.json({ items });
     })
     .catch(err => {
       res
