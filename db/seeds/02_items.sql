@@ -1,6 +1,6 @@
 INSERT INTO items (menu_id, title, details, price_cents, active) VALUES (1, 'Burger', 'Delicious and not nutricious', 1500, true);
 
-INSERT INTO items (menu_id, title, details, price_cents, active) VALUES (2, 'Salad', 'Nutricious not delicious', 1300, true);
+INSERT INTO items (menu_id, title, details, price_cents, active) VALUES (1, 'Salad', 'Nutricious not delicious', 1300, true);
 
 INSERT INTO items (menu_id, title, details, price_cents, active) VALUES (2, 'Soup', 'Soup De Jour all jour', 1100, true);
 

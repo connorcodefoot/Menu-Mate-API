@@ -1,16 +1,16 @@
 const db = require('../connection');
 
-const getMenus = () => {
+const getItemsByMenu = (id) => {
   return db.query(
-
     `
-    SELECT * FROM menus
+    SELECT *
+    FROM items
+    WHERE menu_id = ${id}
     `
-
     )
     .then(data => {
       return data.rows
     });
 };
 
-module.exports = { getMenus };
+module.exports = { getItemsByMenu };

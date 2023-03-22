@@ -1,9 +1,11 @@
 const express = require('express');
 const router  = express.Router();
 const menuQueries = require('../db/queries/menus')
+const itemsByMenu = require ('../db/queries/items_by_menu')
 
-router.get('/menus', (req, res) => {
-  menuQueries.getMenus()
+
+router.get('/menus/:id', (req, res) => {
+  itemsByMenu.getItemsByMenu(req.params.id)
     .then(items => {
       res.json({ items });
     })
@@ -13,5 +15,21 @@ router.get('/menus', (req, res) => {
         .json({ error: err.message });
     });
 });
+
+router.get('/menus', (req, res) => {
+  menuQueries.getMenus()
+    .then(menus => {
+      res.json({ menus });
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .json({ error: err.message });
+    });
+});
+
+
+
+
 
 module.exports = router;

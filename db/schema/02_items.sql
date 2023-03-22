@@ -5,5 +5,6 @@ CREATE TABLE items (
   title VARCHAR(255) NOT NULL,
   details VARCHAR(255) NOT NULL,
   price_cents INTEGER NOT NULL,
+  category VARCHAR(255) NOT NULL,
   active BOOLEAN
 );
