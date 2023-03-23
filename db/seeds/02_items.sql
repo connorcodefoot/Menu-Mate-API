@@ -8,9 +8,6 @@ INSERT INTO items (menu_id, title, details, price_cents, picture, active) VALUES
   (1, 'Old Fashioned', 'Bourbon, sugar, bitters', 1500, '/images/01_drinks/OldFashioned.jpeg', true),
   (1, 'Margarita', 'Tequila, lime, triple sec, agave nectar', 1400, '/images/01_drinks/Margarita.jpeg', true);
 
-<<<<<<< HEAD
-INSERT INTO items (menu_id, title, details, price_cents, active) VALUES (1, 'Salad', 'Nutricious not delicious', 1300, true);
-=======
   -- Appetizers
 INSERT INTO items (menu_id, title, details, price_cents, picture, active) VALUES
   (2, 'Gourmet Charcuterie Board', 'A selection of premium meats, cheeses, olives, nuts, and crackers', 2800, '/images/02_appies/CharcuterieBoard.jpg', true),
@@ -20,7 +17,6 @@ INSERT INTO items (menu_id, title, details, price_cents, picture, active) VALUES
   (2, 'Fried Calamari', 'Crispy calamari with tzatziki', 1500, '/images/02_appies/Calamari.jpeg', true),
   (2, 'Crispy Brussels Sprouts', 'Crispy fried Brussels sprouts with bacon, balsamic glaze, and lemon', 1200, '/images/02_appies/CrispyBrussels.jpeg', true),
   (2, 'Truffle Fries', 'Crispy shoestring fries tossed in truffle oil, parmesan cheese, and fresh herbs', 1000, '/images/02_appies/TruffleFries.jpeg', true);
->>>>>>> 4d92d8629ee9e061c93c6c30e4620dccf3cb72d5
 
 
 -- Salads
