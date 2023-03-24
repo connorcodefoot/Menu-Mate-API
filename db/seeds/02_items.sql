@@ -18,6 +18,7 @@ INSERT INTO items (menu_id, title, details, price_cents, picture, active) VALUES
   (2, 'Crispy Brussels Sprouts', 'Crispy fried Brussels sprouts with bacon, balsamic glaze, and lemon', 1200, '/images/02_appies/CrispyBrussels.jpeg', true),
   (2, 'Truffle Fries', 'Crispy shoestring fries tossed in truffle oil, parmesan cheese, and fresh herbs', 1000, '/images/02_appies/TruffleFries.jpeg', true);
 
+
 -- Salads
 INSERT INTO items (menu_id, title, details, price_cents, picture, active) VALUES
   (3, 'Asian Noodle Salad', 'Mixed greens, udon noodles, shredded carrots, red peppers, scallions, edamame, and sesame ginger dressing', 1700, '/images/03_salads/AsianNoodle.jpg', true),
