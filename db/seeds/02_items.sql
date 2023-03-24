@@ -8,9 +8,6 @@ INSERT INTO items (menu_id, title, details, price_cents, picture, active) VALUES
   (1, 'Old Fashioned', 'Bourbon, sugar, bitters', 1500, '/images/01_drinks/OldFashioned.jpeg', true),
   (1, 'Margarita', 'Tequila, lime, triple sec, agave nectar', 1400, '/images/01_drinks/Margarita.jpeg', true);
 
-<<<<<<< HEAD
-INSERT INTO items (menu_id, title, details, price_cents, active) VALUES (1, 'Salad', 'Nutricious not delicious', 1300, true);
-=======
   -- Appetizers
 INSERT INTO items (menu_id, title, details, price_cents, picture, active) VALUES
   (2, 'Gourmet Charcuterie Board', 'A selection of premium meats, cheeses, olives, nuts, and crackers', 2800, '/images/02_appies/CharcuterieBoard.jpg', true),
@@ -20,8 +17,6 @@ INSERT INTO items (menu_id, title, details, price_cents, picture, active) VALUES
   (2, 'Fried Calamari', 'Crispy calamari with tzatziki', 1500, '/images/02_appies/Calamari.jpeg', true),
   (2, 'Crispy Brussels Sprouts', 'Crispy fried Brussels sprouts with bacon, balsamic glaze, and lemon', 1200, '/images/02_appies/CrispyBrussels.jpeg', true),
   (2, 'Truffle Fries', 'Crispy shoestring fries tossed in truffle oil, parmesan cheese, and fresh herbs', 1000, '/images/02_appies/TruffleFries.jpeg', true);
->>>>>>> 4d92d8629ee9e061c93c6c30e4620dccf3cb72d5
-
 
 -- Salads
 INSERT INTO items (menu_id, title, details, price_cents, picture, active) VALUES
@@ -50,18 +45,6 @@ INSERT INTO items (menu_id, title, details, price_cents, picture, active) VALUES
   (5, 'New York Cheesecake', 'Creamy and rich cheesecake made with a graham cracker crust and a raspberry swirl', 1200, '/images/05_desserts/Cheesecake.jpg', true),
   (5, 'Tiramisu', 'Classic Italian dessert made with ladyfingers soaked in coffee and layered with mascarpone cheese and cocoa powder', 1300, '/images/05_desserts/Tiramisu.jpg', true),
   (5, 'Chocolate Lava Cake', 'Warm and gooey chocolate cake with a molten chocolate center, served with vanilla ice cream', 1200, '/images/05_desserts/LavaCake.jpg', true);
-
-
-
--- INSERT INTO items (menu_id, title, details, price_cents, active) VALUES (1, 'Burger', 'Delicious and not nutricious', 1500, true);
-
--- INSERT INTO items (menu_id, title, details, price_cents, active) VALUES (2, 'Salad', 'Nutricious not delicious', 1300, true);
-
--- INSERT INTO items (menu_id, title, details, price_cents, active) VALUES (2, 'Soup', 'Soup De Jour all jour', 1100, true);
-
--- INSERT INTO items (menu_id, title, details, price_cents, active) VALUES (1, 'Burrito', 'It is good and this is a long description to test the db and the styling cause resataurants may input this amount of detail for the order. It could be longer and longer and up until now even longer.', 2100, true);
-
--- INSERT INTO items (menu_id, title, details, price_cents, active) VALUES (3, 'Icecream', 'Served cold', 800, true);
 
 
 
