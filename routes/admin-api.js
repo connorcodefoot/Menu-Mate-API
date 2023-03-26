@@ -17,6 +17,8 @@ router.get('/orders', (req, res) => {
     });
 });
 
+
+// Returns all menu items associated with an order
 router.get('/orders/:id', (req, res) => {
   itemQueries.itemsByOrder(req.params.id)
     .then(items => {

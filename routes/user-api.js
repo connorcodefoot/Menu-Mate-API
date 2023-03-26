@@ -4,6 +4,7 @@ const menuQueries = require('../db/queries/menus');
 const itemsByMenu = require('../db/queries/items_by_menu');
 const cartQueries = require('../db/queries/cart');
 const orders = require('../db/queries/orders');
+const itemQueries= require ('../db/queries/items_by_order')
 
 
 
@@ -39,6 +40,22 @@ router.get('/cart', (req, res) => {
     });
 });
 
+router.post('/new-order-item', (req, res) => {
+
+  console.log('new order item received')
+  console.log('req before calling DB:', req)
+  orders.newOrderItem(req.query)
+    .then(data => {
+      console.log('data returned from query:', data)
+      res.json(data)
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .json({ error: err.message });
+    });
+});
+
 router.post('/new-order', (req, res) => {
 
   orders.newOrder(req.query)
@@ -52,16 +69,10 @@ router.post('/new-order', (req, res) => {
     });
 });
 
-
-router.post('/new-order-item', (req, res) => {
-
-  console.log('received')
-  console.log(req)
-
-  orders.newOrderItem(req.query)
-    .then(data => {
-      console.log(data)
-      res.json(data)
+router.get('/orders/:id', (req, res) => {
+  itemQueries.itemsByOrder(req.params.id)
+    .then(items => {
+      res.json({ items });
     })
     .catch(err => {
       res
