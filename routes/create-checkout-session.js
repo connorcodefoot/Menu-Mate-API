@@ -25,7 +25,6 @@ router.post('/create-checkout-session', async (req, res) => {
 })
 
 router.get('/checkout-url', (req, res) => {
-
   res.json({stripeSession})
 
 })
