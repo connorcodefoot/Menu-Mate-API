@@ -3,6 +3,7 @@ const express = require('express');
 const router  = express.Router();
 const orderQueries = require('../db/queries/orders');
 const itemQueries= require ('../db/queries/items_by_order')
+const menuQueries = require('../db/queries/menus');
 
 router.get('/orders', (req, res) => {
   orderQueries.getOrders()
@@ -23,6 +24,19 @@ router.get('/orders/:id', (req, res) => {
   itemQueries.itemsByOrder(req.params.id)
     .then(items => {
       res.json({ items });
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .json({ error: err.message });
+    });
+});
+
+router.post('/new-menu', (req, res) => {
+
+  menuQueries.newMenu(req.query)
+    .then(data => {
+      res.json(data)
     })
     .catch(err => {
       res
