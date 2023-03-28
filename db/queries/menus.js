@@ -7,10 +7,24 @@ const getMenus = () => {
     SELECT * FROM menus
     `
 
-    )
+  )
     .then(data => {
-      return data.rows
+      return data.rows;
     });
 };
 
-module.exports = { getMenus };
+const newMenu = (params) => {
+  return db.query(
+    `INSERT INTO menus(title)
+    VALUES ($1::text)
+    RETURNING id;`,
+    [params.title]
+  )
+    .then(data => {
+      return data;
+    })
+    .catch((err) => { return 'error'; });
+};
+
+
+module.exports = { getMenus, newMenu };
