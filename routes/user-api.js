@@ -7,6 +7,32 @@ const orders = require('../db/queries/orders');
 const itemQueries= require ('../db/queries/items_by_order')
 
 
+router.get('/order-total/:id', (req, res) => {
+  orders.orderTotal(req.params.id)
+    .then(items => {
+      res.json({ items });
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .json({ error: err.message });
+    });
+});
+
+
+router.put('/orders/:id/paid', (req, res) => {
+  orders.orderPaid(req.params.id)
+    .then(items => {
+      res.json({ items });
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .json({ error: err.message });
+    });
+});
+
+
 
 router.get('/menus/:id', (req, res) => {
   itemsByMenu.getItemsByMenu(req.params.id)
@@ -42,8 +68,6 @@ router.get('/cart', (req, res) => {
 
 router.post('/new-order-item', (req, res) => {
 
-  console.log('new order item received')
-  console.log('req before calling DB:', req)
   orders.newOrderItem(req.query)
     .then(data => {
       console.log('data returned from query:', data)
