@@ -6,7 +6,6 @@ const cartQueries = require('../db/queries/cart');
 const orders = require('../db/queries/orders');
 const itemQueries= require ('../db/queries/items_by_order')
 
-
 router.get('/order-total/:id', (req, res) => {
   orders.orderTotal(req.params.id)
     .then(items => {
@@ -18,7 +17,6 @@ router.get('/order-total/:id', (req, res) => {
         .json({ error: err.message });
     });
 });
-
 
 router.put('/orders/:id/paid', (req, res) => {
   orders.orderPaid(req.params.id)
