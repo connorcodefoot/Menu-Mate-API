@@ -54,5 +54,18 @@ const editItem = (params) => {
     .catch((err) => console.error(err));
 };
 
+const deleteItem = (params) => {
 
-module.exports = { getMenus, newMenu, newItem, editItem };
+  console.log("params:", params)
+  return db.query(
+    `DELETE FROM items WHERE id = $1::integer;`,
+    [params.id]
+  )
+    .then(data => {
+      return data;
+    })
+    .catch((err) => console.error(err));
+};
+
+
+module.exports = { getMenus, newMenu, newItem, editItem, deleteItem };

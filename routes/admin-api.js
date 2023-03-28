@@ -71,4 +71,19 @@ router.put('/edit-item', (req, res) => {
     });
 });
 
+router.delete('menu/delete-item', (req, res) => {
+  console.log("request received")
+  console.log("req query:", req.query)
+
+  menuQueries.deleteItem(req.query)
+    .then(data => {
+      res.json(data)
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .json({ error: err.message });
+    });
+});
+
 module.exports = router;
