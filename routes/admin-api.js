@@ -44,9 +44,23 @@ router.post('/new-menu', (req, res) => {
     });
 });
 
-router.put('/new-item', (req, res) => {
+router.post('/new-item', (req, res) => {
 
   menuQueries.newItem(req.query)
+    .then(data => {
+      res.json(data)
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .json({ error: err.message });
+    });
+});
+
+
+router.put('/edit-item', (req, res) => {
+
+  menuQueries.editItem(req.query)
     .then(data => {
       res.json(data)
     })

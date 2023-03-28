@@ -28,6 +28,19 @@ const newMenu = (params) => {
 
 const newItem = (params) => {
   return db.query(
+    `INSERT INTO items (menu_id, title, details, price_cents, picture)
+    VALUES ($1::integer, $2::text, $3::text, $4::integer, $5::text)
+    ;`,
+    [params.menuID, params.title, params.details, params.price, params.picture]
+  )
+    .then(data => {
+      return data;
+    })
+    .catch((err) => console.error(err));
+};
+
+const editItem = (params) => {
+  return db.query(
     `INSERT INTO items (id, menu_id, title, details, price_cents, picture)
     VALUES ($1::integer, $2::integer, $3::text, $4::text, $5::integer, $6::text)
     ON CONFLICT (id) DO
@@ -42,4 +55,4 @@ const newItem = (params) => {
 };
 
 
-module.exports = { getMenus, newMenu, newItem };
+module.exports = { getMenus, newMenu, newItem, editItem };
