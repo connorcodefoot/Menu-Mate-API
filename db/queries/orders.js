@@ -4,7 +4,7 @@ const db = require('../connection');
 const getOrders = () => {
   return db.query(
     `
-    SELECT id, customer_name, table_number, order_total_cents, paid FROM orders
+    SELECT id, customer_name, table_number, order_total_cents, paid FROM orders ORDER BY id DESC
     `
   )
     .then(data => {
