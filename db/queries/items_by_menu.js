@@ -6,6 +6,7 @@ const getItemsByMenu = (id) => {
     SELECT *
     FROM items
     WHERE menu_id = ${id}
+    ORDER BY id;
     `
     )
     .then(data => {
