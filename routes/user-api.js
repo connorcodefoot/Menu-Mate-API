@@ -8,8 +8,9 @@ const itemQueries= require ('../db/queries/items_by_order')
 
 router.get('/order-total/:id', (req, res) => {
   orders.orderTotal(req.params.id)
-    .then(items => {
-      res.json({ items });
+    .then(data => {
+      console.log(res)
+      res.json({ data });
     })
     .catch(err => {
       res
@@ -76,6 +77,7 @@ router.post('/new-order-item', (req, res) => {
         .status(500)
         .json({ error: err.message });
     });
+
 });
 
 router.post('/new-order', (req, res) => {

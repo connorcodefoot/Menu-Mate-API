@@ -7,7 +7,6 @@ let stripeSession;
 
 router.post('/create-checkout-session', async (req, res) => {
 
-  console.log('req received')
 
   const session = await stripe.checkout.sessions.create({
     line_items: [

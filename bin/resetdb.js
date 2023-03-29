@@ -13,7 +13,7 @@ const db = require('../db/connection');
 
 // Loads the schema files from db/schema
 const runSchemaFiles = async () => {
-  console.log(chalk.cyan(`-> Loading Schema Files ...`));
+  (chalk.cyan(`-> Loading Schema Files ...`));
   const schemaFilenames = fs.readdirSync('./db/schema');
 
   for (const fn of schemaFilenames) {

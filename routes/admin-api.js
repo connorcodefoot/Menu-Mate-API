@@ -8,7 +8,6 @@ const menuQueries = require('../db/queries/menus');
 router.get('/orders', (req, res) => {
   orderQueries.getOrders()
     .then(data => {
-      console.log(data)
       res.json({ data });
     })
     .catch(err => {

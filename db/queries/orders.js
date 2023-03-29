@@ -26,14 +26,11 @@ const newOrder = (params) => {
 };
 
 const newOrderItem = (params) => {
-  console.log('sql attempted')
-  console.log(params.orderID,params.itemID)
   return db.query(
     `INSERT INTO order_items (order_id, item_id) VALUES ($1::integer, $2::integer);`,
     [params.orderID, params.itemID]
   )
     .then(data => {
-      console.log('inserted into DB')
       return data;
     })
     .catch((err) => { return 'error'; });
@@ -72,7 +69,6 @@ const orderTotal = (id) => {
     [id]
   )
   .then(data => {
-    console.log(data)
     return data;
   })
   .catch((err) => { return 'error'; });
