@@ -12,7 +12,7 @@ INSERT INTO items (menu_id, title, details, price_cents, picture, active) VALUES
 INSERT INTO items (menu_id, title, details, price_cents, picture, active) VALUES
   (2, 'Gourmet Charcuterie Board', 'A selection of premium meats, cheeses, olives, nuts, and crackers', 2800, '/images/02_appies/CharcuterieBoard.jpg', true),
   (2, 'Spicy Tuna Tartare', 'Fresh tuna, avocado in a spicy mayo, topped with arugala', 1600, '/images/02_appies/TunaTartare.jpeg', true),
-  (2, 'Baked Brie', 'Warm brie cheese topped with honey, served with a side og red pepper jelly and crostinis', 1600, '/images/02_appies/Baked Brie.jpeg', true),
+  (2, 'Baked Brie', 'Warm brie cheese topped with honey, served with a side of red pepper jelly and crostinis', 1600, '/images/02_appies/Baked Brie.jpeg', true),
   (2, 'Crab Cakes', 'Pan-seared crab cakes with remoulade sauce on the side', 1600, '/images/02_appies/CrabCakes.jpg', true),
   (2, 'Fried Calamari', 'Crispy calamari with tzatziki', 1500, '/images/02_appies/Calamari.jpeg', true),
   (2, 'Crispy Brussels Sprouts', 'Crispy fried Brussels sprouts with bacon, balsamic glaze, and lemon', 1200, '/images/02_appies/CrispyBrussels.jpeg', true),
