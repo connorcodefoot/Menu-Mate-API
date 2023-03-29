@@ -7,10 +7,19 @@ const orders = require('../db/queries/orders');
 const itemQueries= require ('../db/queries/items_by_order')
 
 router.get('/order-total/:id', (req, res) => {
+
+  console.log('requested')
+  let total = 0;
+
   orders.orderTotal(req.params.id)
     .then(data => {
-      console.log(res)
+      total = data.rows[0].sum
       res.json({ data });
+    })
+    .then(() => {
+      console.log(req.params.id)
+      console.log(total)
+      orders.updateOrderTotal(req.params.id, total)
     })
     .catch(err => {
       res
@@ -69,7 +78,6 @@ router.post('/new-order-item', (req, res) => {
 
   orders.newOrderItem(req.query)
     .then(data => {
-      console.log('data returned from query:', data)
       res.json(data)
     })
     .catch(err => {

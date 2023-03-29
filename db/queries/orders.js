@@ -27,8 +27,8 @@ const newOrder = (params) => {
 
 const newOrderItem = (params) => {
   return db.query(
-    `INSERT INTO order_items (order_id, item_id) VALUES ($1::integer, $2::integer);`,
-    [params.orderID, params.itemID]
+    `INSERT INTO order_items (order_id, item_id, notes) VALUES ($1::integer, $2::integer, $3::text);`,
+    [params.orderID, params.itemID, params.notes]
   )
     .then(data => {
       return data;
@@ -39,8 +39,6 @@ const newOrderItem = (params) => {
 
 const orderPaid = (id) => {
 
-  console.log(id)
-
   return db.query(
     `UPDATE orders
     SET paid = 1
@@ -49,7 +47,6 @@ const orderPaid = (id) => {
     [id]
   )
   .then(data => {
-    console.log('UPDATED')
     return data;
   })
   .catch((err) => { return 'error'; });
@@ -57,8 +54,6 @@ const orderPaid = (id) => {
 
 
 const orderTotal = (id) => {
-
-  console.log(id)
 
   return db.query(
     `SELECT SUM(price_cents)
@@ -74,5 +69,23 @@ const orderTotal = (id) => {
   .catch((err) => { return 'error'; });
 }
 
+const updateOrderTotal = (id, total) => {
 
-module.exports = { getOrders, newOrder, newOrderItem, orderPaid, orderTotal };
+  console.log(total)
+
+  return db.query(
+    `UPDATE orders
+    SET order_total_cents = ($1::integer)
+    WHERE id = ($2::integer);
+    `,
+    [total, id]
+  )
+  .then(data => {
+    console.log(data)
+  })
+  .catch((err) => { return 'error'; });
+}
+
+
+
+module.exports = { getOrders, newOrder, newOrderItem, orderPaid, orderTotal, updateOrderTotal };

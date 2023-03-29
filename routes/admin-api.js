@@ -71,8 +71,6 @@ router.put('/edit-item', (req, res) => {
 });
 
 router.delete('/delete-item/:id', (req, res) => {
-  console.log("request received")
-  console.log("req query:", req.query)
 
   menuQueries.deleteItem(req.query)
     .then(data => {

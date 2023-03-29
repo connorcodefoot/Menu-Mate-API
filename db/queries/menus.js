@@ -56,7 +56,6 @@ const editItem = (params) => {
 
 const deleteItem = (params) => {
 
-  console.log("params:", params)
   return db.query(
     `DELETE FROM items WHERE id = $1::integer;`,
     [params.id]
