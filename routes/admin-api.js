@@ -83,4 +83,21 @@ router.delete('/delete-item/:id', (req, res) => {
     });
 });
 
+
+router.put('/order-status/:id', (req, res) => {
+
+
+  console.log('received on api')
+
+  orderQueries.updateOrderStatus(req.query)
+    .then(data => {
+      res.json(data)
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .json({ error: err.message });
+    });
+});
+
 module.exports = router;

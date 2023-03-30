@@ -71,8 +71,6 @@ const orderTotal = (id) => {
 
 const updateOrderTotal = (id, total) => {
 
-  console.log(total)
-
   return db.query(
     `UPDATE orders
     SET order_total_cents = ($1::integer)
@@ -87,5 +85,23 @@ const updateOrderTotal = (id, total) => {
 }
 
 
+const updateOrderStatus = (params) => {
 
-module.exports = { getOrders, newOrder, newOrderItem, orderPaid, orderTotal, updateOrderTotal };
+  console.log(params)
+
+  return db.query(
+    `UPDATE orders
+    SET order_status = ($1::text)
+    WHERE id = ($2::integer);
+    `,
+    [params.orderStatus, params.id]
+  )
+  .then(data => {
+    console.log(data)
+  })
+  .catch((err) => { return 'error'; });
+}
+
+
+
+module.exports = { getOrders, newOrder, newOrderItem, orderPaid, orderTotal, updateOrderTotal, updateOrderStatus };
